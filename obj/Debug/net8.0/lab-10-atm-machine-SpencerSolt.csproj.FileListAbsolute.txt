@@ -1,0 +1,15 @@
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\bin\Debug\net8.0\lab-10-atm-machine-SpencerSolt.exe
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\bin\Debug\net8.0\lab-10-atm-machine-SpencerSolt.deps.json
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\bin\Debug\net8.0\lab-10-atm-machine-SpencerSolt.runtimeconfig.json
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\bin\Debug\net8.0\lab-10-atm-machine-SpencerSolt.dll
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\bin\Debug\net8.0\lab-10-atm-machine-SpencerSolt.pdb
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.AssemblyInfoInputs.cache
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.AssemblyInfo.cs
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.csproj.CoreCompileInputs.cache
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.sourcelink.json
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.dll
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\refint\lab-10-atm-machine-SpencerSolt.dll
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.pdb
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\lab-10-atm-machine-SpencerSolt.genruntimeconfig.cache
+C:\Users\spenc\Desktop\Labs\lab-10-atm-machine-SpencerSolt\obj\Debug\net8.0\ref\lab-10-atm-machine-SpencerSolt.dll

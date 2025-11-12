@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-10-atm-machine-SpencerSolt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+842639930031a161f5034ab8fd459b418a6253d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92a39f4b344a4f013e5fac76063ec6bc276690d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-10-atm-machine-SpencerSolt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-10-atm-machine-SpencerSolt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
