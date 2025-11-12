@@ -18,11 +18,12 @@ for (int i = 0; i < bankDataBaseFile.Count(); i++)
 
 //System to login users in the database
 int tries = 0;
-string? userName = "";
+string? userName;
 int pin;
 bool login = false;
+int userNumber = -1;
 //Users enter a username and a pin at least 3 times to login or end the program
-while (tries < 3)
+while (tries < 3 && login == false)
 {
     Console.Write("Enter your username: ");
     userName = Console.ReadLine();
@@ -31,8 +32,8 @@ while (tries < 3)
     for (int x = 0; x < bankDataBaseUserName.Count(); x++)
         if (userName == bankDataBaseUserName[x] || pin == bankDataBasePin[x])
         {
+            userNumber = x;
             login = true;
-            break;
         }
     tries++;
     Console.Clear();
@@ -42,5 +43,7 @@ while (tries < 3)
 //Where the program continues if the user logs in
 if (login == true)
 {
-    Console.WriteLine($"Welcome, {userName}");
+    Console.Clear();
+    Console.WriteLine($"Welcome {bankDataBaseUserName[userNumber]}, please select one of the option below");
+    Console.WriteLine($" 1 - Check Balance \n 2 - Withdraw \n 3 - Deposit \n 4 - Display last 5 Transactions \n 5 - Quick Withdraw $40 \n 6 - Quick Withdraw $100 \n 7 - End Current Session");
 }
