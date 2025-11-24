@@ -1,4 +1,30 @@
-﻿Console.Clear();
+﻿using System.Diagnostics;
+
+Debug.Assert(ValidPassword("1234") == true);
+Debug.Assert(ValidPassword("12a4") == false);
+Debug.Assert(ValidPassword("$123") == false);
+
+Debug.Assert(ValidUsername("user") == true);
+Debug.Assert(ValidUsername("User") == true);
+Debug.Assert(ValidUsername("user123") == false);
+Debug.Assert(ValidUsername("User@123") == false);
+Debug.Assert(ValidUsername("User@") == false);
+
+Debug.Assert(ValidWithdrawAmount(50, 100) == true);
+Debug.Assert(ValidWithdrawAmount(-10, 100) == false);
+Debug.Assert(ValidWithdrawAmount(150, 100) == false);
+
+Debug.Assert(ValidDepositAmount(50) == true);
+Debug.Assert(ValidDepositAmount(-10) == false);
+
+Debug.Assert(ValidMenuInput(1) == true);
+Debug.Assert(ValidMenuInput(7) == true);
+Debug.Assert(ValidMenuInput(0) == false);
+Debug.Assert(ValidMenuInput(8) == false);
+
+Console.WriteLine("Press any key to begin your ATM session");
+Console.ReadKey(true);
+Console.Clear();
 
 //Loads the bank database into a list
 string[] bankDataBaseFile = File.ReadAllLines("bank.txt");
@@ -23,7 +49,7 @@ for (int i = 0; i < bankDataBaseFile.Count(); i++)
 //System to login users in the database
 int tries = 0;
 string? userName;
-int pin;
+int pin = -1;
 bool login = false;
 int userNumber = -1;
 //Users enter a username and a pin at least 3 times to login or end the program
@@ -31,8 +57,14 @@ while (tries < 3 && login == false)
 {
     Console.Write("Enter your username: ");
     userName = Console.ReadLine();
+    //Stops the program from crashing if the user enters a null username
+    if (userName != null)
+        userName = userName.ToLower();
     Console.Write("Enter your pin: ");
-    pin = Convert.ToInt32(Console.ReadLine());
+    string? pinString = Console.ReadLine();
+    //Stops the program if the user enters a non-numeric pin
+    if (pinString != null && pinString.All(char.IsDigit) == false)
+        pin = Convert.ToInt32(pinString);
     for (int x = 0; x < bankDataBaseUserName.Count(); x++)
         if (userName == bankDataBaseUserName[x] || pin == bankDataBasePin[x])
         {
@@ -124,6 +156,11 @@ decimal Deposit()
     Console.Clear();
     Console.Write("Amount to Deposit: ");
     decimal amountToWithdraw = Convert.ToDecimal(Console.ReadLine());
+    if (amountToWithdraw < 0)
+    {
+        Console.WriteLine("Cannot deposit negative amounts");
+        amountToWithdraw = 0;
+    }
     Console.WriteLine($"You have deposited ${amountToWithdraw}");
     Console.WriteLine($"\nPress any key to continue");
     Console.ReadKey(true);
@@ -150,11 +187,6 @@ decimal QuickWithdraw(decimal amount, decimal currentBalance)
     if (amountToWithdraw > currentBalance)
     {
         Console.WriteLine("Withdraw exceeds Current Balance");
-        amountToWithdraw = 0;
-    }
-    else if (withdrawnAmount < 0)
-    {
-        Console.WriteLine("Cannot withdraw negative amounts");
         amountToWithdraw = 0;
     }
     Console.WriteLine($"You have withdrawn ${amountToWithdraw}");
@@ -235,3 +267,47 @@ if (login == true)
 }
 Console.Clear();
 Console.WriteLine("Thank you for using the ATM!");
+
+//Methods used for testing purposes
+//Checks for valid password input
+bool ValidPassword(string password)
+{
+    //Checks for numbers only
+    if (password.All(char.IsDigit) == true && password != null && Convert.ToInt32(password) >= 0)
+        return true;
+    else
+        return false;
+}
+//Checks for valid username input
+bool  ValidUsername(string userName)
+{
+    //Checks for letters and numbers only
+    if (userName.All(char.IsLetter) == true && userName != null)
+        return true;
+    else
+        return false;
+}
+//Checks for valid withdraw amount
+bool ValidWithdrawAmount(decimal amount, decimal currentBalance)
+{
+    if (amount < 0 || amount > currentBalance)
+        return false;
+    else
+        return true;
+}
+//Checks for valid deposit amount
+bool ValidDepositAmount(decimal amount)
+{
+    if (amount < 0)
+        return false;
+    else
+        return true;
+}
+//Checks for valid menu input
+bool ValidMenuInput(int input)
+{
+    if (input < 1 || input > 7)
+        return false;
+    else
+        return true;
+}
